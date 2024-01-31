@@ -1,2 +1,5 @@
 # Node
 /node_modules
+
+#Security files
+.env
