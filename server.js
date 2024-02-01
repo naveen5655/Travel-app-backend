@@ -1,6 +1,8 @@
 const express = require("express");
 const mongoose = require('mongoose');
 
+const hotelDataAddedToDBRouter = require("./routes/dataimport.router");
+
 const hotelRouter = require("./routes/hotel.router");
 const connectDB = require("./config/dbconfig");
 
@@ -14,6 +16,8 @@ const PORT = 3500;
 app.get("/",(req,res)=>{
     res.send("Hello Badisa Naveen")
 })
+
+app.use("/api/hoteldata", hotelDataAddedToDBRouter);
 
 app.use("/api/hotels",hotelRouter);
 
