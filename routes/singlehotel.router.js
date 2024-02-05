@@ -6,7 +6,7 @@ const Hotel = require("../model/hotel.model");
 router.route("/:id")
     .get(async (req, res) => {
         try {
-            const { id } = req.params; // Corrected from res.params to req.params
+            const { id } = req.params;
             const hotel = await Hotel.findById(id);
             if (hotel) {
                 res.json(hotel);
