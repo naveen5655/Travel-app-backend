@@ -3,6 +3,7 @@ const mongoose = require('mongoose');
 
 const hotelDataAddedToDBRouter = require("./routes/dataimport.router");
 const categoryDataAddedToDBRouter = require("./routes/categoryimport.router");
+const singleHoterRouter = require("./routes/singlehotel.router");
 
 const hotelRouter = require("./routes/hotel.router");
 const categoryRouter = require("./routes/category.router")
@@ -23,6 +24,7 @@ app.use("/api/hoteldata", hotelDataAddedToDBRouter);
 app.use("/api/categorydata", categoryDataAddedToDBRouter);
 app.use("/api/hotels",hotelRouter);
 app.use("/api/category",categoryRouter);
+app.use("/api/hotels", singleHoterRouter);
 
 mongoose.connection.once("open", () =>{
     console.log("Connected to db");
